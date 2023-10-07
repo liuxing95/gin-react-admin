@@ -3,6 +3,7 @@ package utils
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/gofrs/uuid"
+
 	"github.com/liuxing95/gin-react-admin/global"
 	systemReq "github.com/liuxing95/gin-react-admin/model/system/request"
 )
@@ -41,7 +42,7 @@ func GetUserUuid(c *gin.Context) uuid.UUID {
 		}
 	} else {
 		waitUse := claims.(*systemReq.CustomClaims)
-		return waitUse.UUID
+		return uuid.UUID(waitUse.UUID)
 	}
 }
 

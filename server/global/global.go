@@ -1,15 +1,16 @@
 package global
 
 import (
-	"internal/singleflight"
 	"sync"
 
-	"github.com/liuxing95/gin-react-admin/config"
-	"github.com/liuxing95/gin-react-admin/utils/timer"
 	"github.com/redis/go-redis/v9"
 	"github.com/songzhibin97/gkit/cache/local_cache"
 	"go.uber.org/zap"
+	"golang.org/x/sync/singleflight"
 	"gorm.io/gorm"
+
+	"github.com/liuxing95/gin-react-admin/config"
+	"github.com/liuxing95/gin-react-admin/utils/timer"
 )
 
 var (
